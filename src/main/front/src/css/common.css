@@ -65,8 +65,8 @@ a {
 
 .survey {
     background: rgba(255, 255, 255, 0.2);
-    width: 45%;
-    height: 70%;
+    width: 650px;
+    height: 530px;
     margin: auto;
     text-align: left;
     border-radius: 34px;
@@ -78,7 +78,7 @@ a {
 .description-span {
     /*color: #6F6C90;*/
     color: #878787;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .MuiStepLabel-iconContainer {
