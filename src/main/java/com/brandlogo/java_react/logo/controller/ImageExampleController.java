@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://ec2-3-39-64-137.ap-northeast-2.compute.amazonaws.com:3000")
+@CrossOrigin(origins = "http://ec2-3-39-64-137.ap-northeast-2.compute.amazonaws.com")
 @RestController
 @AllArgsConstructor
 public class ImageExampleController {
