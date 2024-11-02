@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import StartPage from './components/StartPage';
 import Survey from "./components/Survey";
+import EndPage from "./components/EndPage";
 import './css/common.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+export const AppContext = createContext();
 
 const theme = createTheme({
   palette: {
@@ -35,32 +38,38 @@ const theme = createTheme({
   },
 });
 
+const baseUrl = "http://ec2-3-39-64-137.ap-northeast-2.compute.amazonaws.com:8080";
+//const baseUrl = "http://localhost:8080";
+
 function App() {
 
     const location = useLocation(); // 현재 위치 가져오기
+    const commonData = { baseUrl };
 
     return (
-        <div className="App bg_blue">
-            <ThemeProvider theme={theme}>
-                <TransitionGroup>
-                    <CSSTransition
-                        key={location.key}
-                        classNames="slide"
-                        timeout={300}
-                    >
-                        <div className="parent">
-                            <div className="child">
-                                <Routes location={location}>
-                                    <Route exact path="/" element={<StartPage />} />
-                                    <Route path="/startPage" element={<StartPage />} />
-                                    <Route path="/survey" element={<Survey />} />
-                                </Routes>
+        <AppContext.Provider value={commonData}>
+            <div className="App bg_blue">
+                <ThemeProvider theme={theme}>
+                    <TransitionGroup>
+                        <CSSTransition
+                            key={location.key}
+                            classNames="slide"
+                            timeout={300}>
+                            <div className="parent">
+                                <div className="child">
+                                    <Routes location={location}>
+                                        <Route exact path="/" element={<StartPage />} />
+                                        <Route path="/startPage" element={<StartPage />} />
+                                        <Route path="/survey" element={<Survey />} />
+                                        <Route path="/endPage" element={<EndPage />} />
+                                    </Routes>
+                                </div>
                             </div>
-                        </div>
-                    </CSSTransition>
-                </TransitionGroup>
-            </ThemeProvider>
-        </div>
+                        </CSSTransition>
+                    </TransitionGroup>
+                </ThemeProvider>
+            </div>
+        </AppContext.Provider>
     );
 }
 

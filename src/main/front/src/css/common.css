@@ -81,6 +81,15 @@ a {
     font-size: 16px;
 }
 
+.example-img {
+    width: 160px;
+    height: 100px;
+}
+
+.generation-img {
+    height: 150px;
+}
+
 .MuiStepLabel-iconContainer {
     padding-right: 0px !important;
 }
@@ -148,20 +157,27 @@ a {
 }
 
 .select-img-btn {
+    background: white;
     border-radius: 15px;
     margin: 2.5% 2.5%;
     width: 45%;
     height: 100%;
-    border: 2px solid #aeaeae;
+    border: 3px solid #aeaeae;
     cursor: pointer;
 }
 
-.select-img-btn:active {
-    border: 2px solid #5ca0e0;
+.select-img-btn2 {
+    background: white;
+    width: 45%;
+    height: 100%;
+    border: none;
+    border: 3px solid #aeaeae;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .active {
-    border: 2px solid #4a3aff;
+    border: 3px solid #72bdf2;
 }
 
 .slide-enter {
@@ -184,6 +200,112 @@ a {
     opacity: 0;
     transform: translateX(-100%); /* 왼쪽으로 나가기 */
     transition: opacity 300ms, transform 300ms; /* 애니메이션 속성 */
+}
+
+.show-img {
+    margin: 5px;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.show-img > .box {
+    width: 1200px;           /* 너비 설정 */
+    height: auto;         /* 높이 설정 */
+    min-height: 1000px;
+    display: flex;          /* 내부 요소를 Flexbox로 설정 */
+    flex-direction: column; /* 내부 요소도 세로 방향으로 정렬 */
+    justify-content: center; /* 내용 중앙 정렬 */
+    align-items: center;     /* 내용 가운데 정렬 */
+    position: relative;      /* 자식 요소의 절대 위치를 위해 설정 */
+}
+
+.show-img > .img1 {
+    background-image: url('../../public/image/back8.png'); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+}
+
+.show-img > .img2 {
+    background-image: url('../../public/image/back4.png'); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+}
+
+.show-img > .img3 {
+    background-image: url('../../public/image/back5.png'); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+}
+
+.show-img > .img4 {
+    background-image: url('../../public/image/back6.png'); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+}
+
+.show-img > .img1 > img {
+    position: absolute;
+    top: 375px;
+    left: 300px;
+    width: 300px;
+    transform: rotate(7deg);
+}
+
+.show-img > .img2 > img {
+    position: absolute;
+    top: 440px;
+    left: 500px;
+    width: 300px;
+    transform: rotate(-42deg);
+}
+
+.show-img > .img3 > img {
+    position: absolute;
+    top: 360px;
+    left: 480px;
+    width: 430px;
+    transform: rotate(3deg);
+}
+
+.show-img > .img4 > img {
+    position: absolute;
+    top: 450px;
+    left: 465px;
+    width: 230px;
+    transform: rotate(-20deg);
+}
+
+.startpage-div {
+    border-top: 1px solid white;
+    height: 63%;
+}
+
+.endpage-div {
+    padding: 0 8px;
+    width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.endpage-btn-div {
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.endpage-btn-div button {
+    width: 150px;
+    height: 55px;
+    font-size: 18px !important;
+    border-radius: 56px !important;
+    opacity: 0.5;
+}
+
+.endpage-btn-div button:hover {
+    opacity: 1;
 }
 
 .p-8 {
@@ -216,9 +338,4 @@ a {
 
 .f-right {
     float: right !important;
-}
-
-.startpage-div {
-    border-top: 1px solid white;
-    height: 63%;
 }

@@ -5,6 +5,7 @@ module.exports = function(app) {
         '/api',
         createProxyMiddleware({
             target: 'http://ec2-3-39-64-137.ap-northeast-2.compute.amazonaws.com:8080',	// 서버 URL or localhost:설정한포트번호
+            //target: 'http://localhost:5000',
             changeOrigin: true,
         })
     );
