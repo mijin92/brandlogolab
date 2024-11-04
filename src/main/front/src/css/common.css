@@ -206,6 +206,7 @@ a {
     margin: 5px;
     height: 70vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .show-img > .box {
